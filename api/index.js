@@ -1,5 +1,16 @@
 import express from "express";
 import cors from "cors";
+import { Client } from "pg";
+ 
+const connection = new Client({
+  user: "postgres",
+  host: "localhost",
+  database: "FullStackDB",
+  password: "Pasha_superuser",
+  port: 5432,
+});
+ 
+connection.connect();
 
 const app = express();
 const port = 3000;
