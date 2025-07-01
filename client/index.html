@@ -31,13 +31,14 @@
         <div class="card" style="width: 30rem">
           <div class="card-body">
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">Name</span>
+              <span class="input-group-text" id="basic-addon1">Username</span>
               <input
                 type="text"
                 class="form-control"
                 placeholder="Enter your username"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                id="username-input"
               />
             </div>
             <div class="input-group mb-3">
@@ -48,6 +49,7 @@
                 placeholder="Enter post name"
                 aria-label="Post name"
                 aria-describedby="basic-addon1"
+                id="post-name-input"
               />
             </div>
             <div class="input-group mb-3">
@@ -60,10 +62,13 @@
                 placeholder="Enter post content"
                 aria-label="Post content"
                 aria-describedby="basic-addon1"
+                id="post-content-input"
               />
             </div>
             <div class="d-flex justify-content-end">
-              <button type="button" class="btn btn-primary">Create post</button>
+              <button type="button" class="btn btn-primary" id="createPost">
+                Create post
+              </button>
             </div>
           </div>
         </div>
