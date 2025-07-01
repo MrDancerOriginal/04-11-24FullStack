@@ -1,0 +1,3 @@
+axios.get("http://localhost:3000/example").then(response => {
+    console.log(response.data);
+});
