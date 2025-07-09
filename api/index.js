@@ -22,10 +22,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan("tiny"))
 app.use(express.json())
 
-app.get("/example", (req, res) => {
-  res.send("Hello World");
-})
-
 app.post("/posts", (req, res) => {
   console.log(req.body)
   const username = req.body.username
@@ -34,20 +30,22 @@ app.post("/posts", (req, res) => {
   connection.query(`INSERT INTO posts(username, postname, postcontent) VALUES ('${username}', '${postName}', '${postContent}')`, (err, res) => {
     if (err) {
       console.error(err.stack);
+      res.status(500).send("Server error");
     } else {
       console.log("Data inserted");
     }
   })
-  res.send("Success")
+  res.status(201)
 })
 
 app.get("/posts", (req, res) => {
   connection.query("SELECT * FROM posts", (err, database_res) => {
     if (err) {
       console.error(err.stack);
+      res.status(500).send("Server error");
     } else {
       console.log(database_res.rows)
-      res.send(database_res.rows)
+      res.json(database_res.rows)
     }
   })
 })

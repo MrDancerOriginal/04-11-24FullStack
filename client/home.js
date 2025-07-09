@@ -11,5 +11,11 @@ document.querySelector("#createPost").addEventListener("click", () => {
         })
         .then((response) => {
             console.log(response.data);
-        });
+            alert("New post has been succesfully created!")
+        })
+        .catch((err) => {
+            console.log("Error while waiting for server responce: " + err)
+            alert("There was an error while creating post, please try again. If the issue presists inform the owner of the site about the issue and provide them with this info: " + err)
+        })
 });
+

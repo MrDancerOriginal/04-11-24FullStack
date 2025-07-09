@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-color: #b818d4;
     --secondary-color: #432344;
     --bs-primary-rgb: 50, 304, 30;
@@ -18,4 +18,17 @@ h6 {
 
 button {
     background-color: var(--primary-color) !important;
-}
+} */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* отключает скроллбар */
+  }
+
+  main {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
